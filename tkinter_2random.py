@@ -51,13 +51,13 @@ def check_limits():
 
     if hum < val_min:
         label_rele.config(image=img_rele_offline)
-        label_rele_text.config(text="Desligado")
+        label_rele_text.config(text="Desligado", bg="grey")
     elif val_min <= hum <= val_max:
         label_rele.config(image=img_rele_on)
-        label_rele_text.config(text="Ligado")
+        label_rele_text.config(text="Ligado", bg="grey")
     else:
         label_rele.config(image=img_rele_high_hum)
-        label_rele_text.config(text="Humidade Elevada")
+        label_rele_text.config(text="Humidade Elevada", bg="grey")
 
 # Janela Sobre
 def show_about():
@@ -158,10 +158,10 @@ date_label_value = tk.Label(frame_leitura, text="01 Janeiro 2000", font=("Arial"
 date_label_value.grid(row=4, column=3, pady=5, sticky="e")
 
 # Frame 2: Tratamento de Dados
-frame_tratamento = tk.Frame(scrollable_frame, bg="lightgrey", relief="ridge", bd=5)
+frame_tratamento = tk.Frame(scrollable_frame, bg="grey", relief="ridge", bd=5)
 frame_tratamento.grid(row=1, column=0, padx=10, pady=10, sticky="ew")
 
-tk.Label(frame_tratamento, text="Tratamento de Dados", font=("Arial", 14), bg="lightgrey").grid(row=0, column=0, columnspan=2, pady=5)
+tk.Label(frame_tratamento, text="Tratamento de Dados", font=("Arial", 14), bg="grey").grid(row=0, column=0, columnspan=2, pady=5)
 
 # Linha contínua de separação
 tk.Frame(frame_tratamento, height=2, width=500, bg="black").grid(row=1, column=0, columnspan=2, pady=5)
@@ -197,3 +197,4 @@ threading.Thread(target=update, daemon=True).start()
 
 # Loop principal
 window.mainloop()
+
